@@ -27,12 +27,26 @@
         --trans-white: hsla(0, 0%, 100%, 0.75);
         --light-gray: hsl(0, 0%, 95%);
       }
-
+      html {
+        box-sizing: border-box;
+        font-size: 100%;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
       body {
         /* font-family: "Big Shoulders Display", cursive; */
         font-family: "Lexend Deca", sans-serif;
         font-size: 15px;
         background-color: var(--light-gray);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
       }
       h2 {
         font-family: "Big Shoulders Display", cursive;
@@ -43,90 +57,93 @@
       p {
         color: var(--trans-white);
       }
-
-      @media (max-width: 1440px) {
-        .flex-container {
-          width: 60%;
-          display: flex;
-          justify-content: center;
-          margin: 150px auto 5px;
-          flex-direction: row;
-        }
-      }
-
       section {
         padding: 45px;
       }
-      #sedan {
+      .sedan {
         background-color: var(--orange);
         border-radius: 8px 0 0 8px;
       }
-      #suv {
+      .suv {
         background-color: var(--cyan);
       }
-      #luxury {
+      .luxury {
         background-color: var(--dark-cyan);
         border-radius: 0 8px 8px 0;
       }
       article {
         margin-bottom: 80px;
       }
-      button {
-        padding: 15px 25px;
-        border-radius: 50px;
-        border-width: 0;
-        border: 1px solid var(--light-gray);
-        font-family: "Lexend Deca", sans-serif;
-      }
-      button:hover {
+
+      .button:hover {
         cursor: pointer;
       }
-      #btn-sedan {
+      .btn-sedan {
         color: var(--orange);
         background-color: var(--light-gray);
       }
-      #btn-suv {
+      .btn-suv {
         color: var(--cyan);
         background-color: var(--light-gray);
       }
-      #btn-luxury {
+      .btn-luxury {
         color: var(--dark-cyan);
         background-color: var(--light-gray);
       }
-      #btn-sedan:hover {
+      .btn-sedan:hover {
         color: var(--light-gray);
         background-color: var(--orange);
       }
-      #btn-suv:hover {
+      .btn-suv:hover {
         color: var(--light-gray);
         background-color: var(--cyan);
       }
-      #btn-luxury:hover {
+      .btn-luxury:hover {
         color: var(--light-gray);
         background-color: var(--dark-cyan);
       }
-
-      @media (max-width: 375px) {
+      .button {
+        border: 1px solid var(--light-gray);
+        font-family: "Lexend Deca", sans-serif;
+        text-decoration: none;
+        border-width: 0;
+        border-radius: 50px;
+        padding: 15px 25px;
+      }
+      @media (min-width: 1280px) {
+        .flex-container {
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+        }
+      }
+      @media (min-width: 375px) and (max-width: 1280px) {
         .flex-container {
           display: flex;
           justify-content: center;
-          margin: 50px auto 5px;
           flex-direction: column;
           width: 80%;
+          margin: 20px;
         }
-        #sedan {
-          background-color: var(--orange);
+        .sedan {
           border-radius: 8px 8px 0 0;
         }
-        #suv {
-          background-color: var(--cyan);
-        }
-        #luxury {
-          background-color: var(--dark-cyan);
+
+        .luxury {
           border-radius: 0 0 8px 8px;
         }
       }
-
+      .sr-only {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
       .attribution {
         font-size: 11px;
         text-align: center;
@@ -137,46 +154,47 @@
     </style>
   </head>
   <body>
-    <div class="flex-container">
-      <section id="sedan">
-        <article class="sedan">
-          <img src="images/icon-sedans.svg" alt="sedan icon" />
+    <main class="flex-container">
+      <h1 class="sr-only">Call to action. This won't be seen</h1>
+      <section class="sedan">
+        <article>
+          <img src="images/icon-sedans.svg" alt="" aria-hidden="true" />
           <h2>Sedans</h2>
           <p>
             Choose a sedan for its affordability and excellent fuel economy.
             Ideal for cruising in the city or on your next road trip.
           </p>
         </article>
-        <button id="btn-sedan">Learn More</button>
+        <a href="#" class="button btn-sedan">Learn More</a>
       </section>
-      <section id="suv">
-        <article class="suv">
-          <img src="images/icon-suvs.svg" alt="sedan icon" />
+      <section class="suv">
+        <article>
+          <img src="images/icon-suvs.svg" alt="" aria-hidden="true" />
           <h2>SUVs</h2>
           <p>
             Take an SUV for its spacious interior, power, and versatility.
             Perfect for your next family vacation and off-road adventures.
           </p>
         </article>
-        <button id="btn-suv">Learn More</button>
+        <a href="#" class="button btn-suv">Learn More</a>
       </section>
-      <section id="luxury">
-        <article class="luxury">
-          <img src="images/icon-luxury.svg" alt="sedan icon" />
+      <section class="luxury">
+        <article>
+          <img src="images/icon-luxury.svg" alt="" aria-hidden="true" />
           <h2>Luxury</h2>
           <p>
             Cruise in the best car brands without the bloated prices. Enjoy the
             enhanced comfort of a luxury rental and arrive in style.
           </p>
         </article>
-        <button id="btn-luxury">Learn More</button>
+        <a href="#" class="button btn-luxury">Learn More</a>
       </section>
-    </div>
-    <div class="attribution">
+    </main>
+    <footer class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="https://github.com/amuhaemin">Ahmad Muhaemin</a>.
-    </div>
+    </footer>
   </body>
 </html>

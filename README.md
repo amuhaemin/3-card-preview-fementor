@@ -14,6 +14,7 @@ This is a solution to the [3-column preview card component challenge on Frontend
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Honorable Mention](#mentions)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -74,7 +75,7 @@ I also try to use the <article>, and <section> tag to wrap the "text" part (I do
 
 ### Continued development
 
-Still looking for the most simple way to apply repeated CSS (in my case is for the button).
+Still looking for the most simple way to apply repeated CSS (in my case is for the button). Needs to read more on CSS Layouting principles, HTML5 simantic principles.
 
 ### Useful resources
 
@@ -84,3 +85,7 @@ Still looking for the most simple way to apply repeated CSS (in my case is for t
 
 - Frontend Mentor - [@amuhaemin](https://www.frontendmentor.io/profile/amuhaemin)
 - Instagram - [@amuhaemin](https://www.instagram.com/amuhaemin)
+
+## Honorable Mention
+
+- @pikamart - (https://www.frontendmentor.io/profile/pikamart)
